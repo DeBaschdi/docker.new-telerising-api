@@ -2,9 +2,14 @@
 
 PWD=$(pwd)
 echo ""
-echo "If u Like my Work, please Donate https://paypal.me/DeBaschdi Thank You ! :)"
+echo "###############################################################################"
+echo "# If u Like my Work, please Donate https://paypal.me/DeBaschdi Thank You ! :) #"
+echo "###############################################################################"
 echo ""
-echo "Running the NEW Telerising-API"
+echo "##################################"
+echo "# Image Version 0.0.1            #"
+echo "# Running The NEW Telerising API #"
+echo "##################################"
 echo ""
 cd /telerising && ./api
 
