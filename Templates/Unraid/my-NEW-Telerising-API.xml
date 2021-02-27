@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>Telerising-Zattoo</Name>
+  <Name>Telerising-1und1</Name>
   <Repository>takealug/telerising-api:amd64</Repository>
   <Registry>https://hub.docker.com/r/takealug/telerising-api</Registry>
   <Network>host</Network>
@@ -16,8 +16,8 @@
   <Icon>https://findicons.com/files/icons/2461/spiffy/256/zattoo.png</Icon>
   <ExtraParams/>
   <PostArgs/>
-  <CPUset/>
-  <DateInstalled>1584932177</DateInstalled>
+  <CPUset>0,1</CPUset>
+  <DateInstalled>1585623576</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Description>Get advanced access to Zattoo internet streams</Description>
@@ -33,7 +33,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/cache/docker/appdata/telerising-zattoo</HostDir>
+      <HostDir>/mnt/cache/docker/appdata/telerising</HostDir>
       <ContainerDir>/telerising</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -55,17 +55,17 @@
       <Mode/>
     </Variable>
     <Variable>
-      <Value>zattoo.com</Value>
+      <Value>www.1und1.tv</Value>
       <Name>PROVIDER</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>username@example.com</Value>
+      <Value>debaschdi@googlemail.com</Value>
       <Name>LOGIN</Name>
       <Mode/>
     </Variable>
     <Variable>
-      <Value>mypassword123</Value>
+      <Value>Bastian1985!</Value>
       <Name>PASSWORD</Name>
       <Mode/>
     </Variable>
@@ -130,7 +130,7 @@
       <Mode/>
     </Variable>
     <Variable>
-      <Value>true</Value>
+      <Value>false</Value>
       <Name>ONDEMAND</Name>
       <Mode/>
     </Variable>
@@ -139,17 +139,28 @@
       <Name>PORT</Name>
       <Mode/>
     </Variable>
+    <Variable>
+      <Value>1985</Value>
+      <Name>SERVER_PIN</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>ekn.selfhost.eu/telerising/1und1</Value>
+      <Name>SSL_DOMAIN</Name>
+      <Mode/>
+    </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Telerising" Target="/telerising" Default="" Mode="rw" Description="Container Path: /telerising" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/docker/appdata/telerising-zattoo</Config>
+  <Config Name="Telerising" Target="/telerising" Default="" Mode="rw" Description="Container Path: /telerising" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/docker/appdata/telerising</Config>
   <Config Name="USER_ID" Target="USER_ID" Default="" Mode="" Description="Container Variable: USER_ID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
   <Config Name="GROUP_ID" Target="GROUP_ID" Default="" Mode="" Description="Container Variable: GROUP_ID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
   <Config Name="AUTO-UPDATE on restart" Target="UPDATE" Default="" Mode="" Description="Container Variable: UPDATE" Type="Variable" Display="always" Required="false" Mask="false">yes</Config>
-  <Config Name="PROVIDER / RESELLER" Target="PROVIDER" Default="" Mode="" Description="Container Variable: PROVIDER" Type="Variable" Display="always" Required="false" Mask="false">zattoo.com</Config>
-  <Config Name="LOGIN" Target="LOGIN" Default="" Mode="" Description="Container Variable: LOGIN" Type="Variable" Display="always" Required="false" Mask="false">username@example.com</Config>
-  <Config Name="PASSWORD" Target="PASSWORD" Default="" Mode="" Description="Container Variable: PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">mypassword123</Config>
+  <Config Name="PROVIDER / RESELLER" Target="PROVIDER" Default="" Mode="" Description="Container Variable: PROVIDER" Type="Variable" Display="always" Required="false" Mask="false">www.1und1.tv</Config>
+  <Config Name="LOGIN" Target="LOGIN" Default="" Mode="" Description="Container Variable: LOGIN" Type="Variable" Display="always" Required="false" Mask="false">debaschdi@googlemail.com</Config>
+  <Config Name="PASSWORD" Target="PASSWORD" Default="" Mode="" Description="Container Variable: PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">Bastian1985!</Config>
   <Config Name="SERVER" Target="SERVER" Default="" Mode="" Description="Container Variable: SERVER" Type="Variable" Display="always" Required="false" Mask="false">1und1-fra1902-1</Config>
   <Config Name="FFMPEG_HOST_LOCATION" Target="FFMPEG_HOST_LOCATION" Default="" Mode="" Description="Container Variable: FFMPEG_HOST_LOCATION" Type="Variable" Display="always" Required="false" Mask="false">/usr/bin/ffmpeg</Config>
+  <Config Name="Listen Port" Target="8180" Default="8180" Mode="tcp" Description="Container Port: " Type="Port" Display="always" Required="false" Mask="false">8180</Config>
   <Config Name="SSL_MODE" Target="SSL_MODE" Default="" Mode="" Description="Container Variable: SSL_MODE" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
   <Config Name="YOUTH PROTECTION PIN" Target="YOUTH_PROTECTION_PIN" Default="" Mode="" Description="Container Variable: YOUTH_PROTECTION_PIN" Type="Variable" Display="always" Required="false" Mask="false">6275</Config>
   <Config Name="Interface" Target="NETWORK_DEVICE" Default="" Mode="" Description="Container Variable: NETWORK_DEVICE" Type="Variable" Display="always" Required="false" Mask="false">br0</Config>
@@ -160,7 +171,8 @@
   <Config Name="Default dolby" Target="DOLBY" Default="" Mode="" Description="Container Variable: DOLBY" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="Default ignore_maxrate" Target="IGNORE_MAXRATE" Default="" Mode="" Description="Container Variable: IGNORE_MAXRATE" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="Default loglevel" Target="FFMPEG_LOGLEVEL" Default="" Mode="" Description="Container Variable: FFMPEG_LOGLEVEL" Type="Variable" Display="always" Required="false" Mask="false">fatal</Config>
-  <Config Name="Default ondemand" Target="ONDEMAND" Default="" Mode="" Description="Container Variable: ONDEMAND" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="Default ondemand" Target="ONDEMAND" Default="" Mode="" Description="Container Variable: ONDEMAND" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
   <Config Name="PORT" Target="PORT" Default="" Mode="" Description="Container Variable: PORT" Type="Variable" Display="always" Required="false" Mask="false">8180</Config>
-  <Config Name="Host Port 1" Target="8180" Default="" Mode="tcp" Description="Container Port: 8180" Type="Port" Display="always" Required="false" Mask="false">8180</Config>
+  <Config Name="SERVER_PIN" Target="SERVER_PIN" Default="" Mode="" Description="Container Variable: SERVER_PIN" Type="Variable" Display="always" Required="false" Mask="false">1985</Config>
+  <Config Name="SSL_DOMAIN" Target="SSL_DOMAIN" Default="" Mode="" Description="Container Variable: SSL_DOMAIN" Type="Variable" Display="always" Required="false" Mask="false">ekn.selfhost.eu/telerising/1und1</Config>
 </Container>

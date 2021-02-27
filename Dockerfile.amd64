@@ -4,7 +4,7 @@ LABEL maintainer="Bastian Kleinschmidt <debaschdi@googlemail.com>" \
       org.label-schema.docker.dockerfile="/Dockerfile" \
       org.label-schema.name="docker.new-telerising-api"
 
-ARG DEPENDENCIES="sed curl wget git perl nano net-tools unzip"
+ARG DEPENDENCIES="sed curl wget git perl nano net-tools unzip ca-certificates"
 
 ENV USER_ID="99" \
     GROUP_ID="100" \
@@ -43,6 +43,8 @@ RUN apt-get -qy update \
     && apt-get dist-upgrade -qy \
     ### install telerising dependencies
     && apt-get install -qy ${DEPENDENCIES} \
+    ## configure System
+    && update-ca-certificates --fresh \
     ### create necessary files/directories
     && mkdir -p /telerising \
     ### alter permissions
