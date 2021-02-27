@@ -1,4 +1,4 @@
-# docker.telerising-api
+# docker.new-telerising-api
 A docker container for running the NEW telerising API
 
 ### Prerequisites
