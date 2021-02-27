@@ -1,0 +1,24 @@
+#!/bin/bash
+
+echo "Updating the NEW Telerising-API"
+
+PWD=$(pwd)
+
+rm -rf /telerising/telerising
+git clone https://github.com/sunsettrack4/telerising-api /telerising/telerising
+
+cd /telerising/telerising
+git checkout main
+
+# Install Package, depending on Architecture
+if [ $(uname -m) = 'x86_64' ]; then
+        unzip -o $(ls |grep linux) -d /
+else
+        unzip -o $(ls |grep armhf) -d /
+fi
+
+cd /
+
+rm -rf /telerising/telerising
+
+cd ${PWD}
