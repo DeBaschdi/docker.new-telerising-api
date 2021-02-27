@@ -4,4 +4,8 @@ manifests:
     platform:
       architecture: amd64
       os: linux
-
+  - image: takealug/new-telerising-api:arm32v7
+    platform:
+      architecture: arm
+      os: linux
+      variant: v7
