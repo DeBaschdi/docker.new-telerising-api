@@ -40,7 +40,6 @@ Network Settings:
 
 | Parameter | Optional | Values/Type | Default | Description |
 | ---- | --- | --- | --- | --- |
-
 | `-p` | yes | [integer] | 5000:5000 | Map Container Listenport to Host Device Listen Port (Bridge Mode)|
 | `--net` | yes | bridge/host | bridge | The Network Mode to run The Container in|
 
