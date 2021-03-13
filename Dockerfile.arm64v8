@@ -17,7 +17,7 @@ ENV USER_ID="99" \
     LC_ALL="en_US.UTF-8" \
     CLEANUP="/tmp/* /var/tmp/* /var/log/* /var/lib/apt/lists/* /var/lib/{apt,dpkg,cache,log}/ /var/cache/apt/archives /usr/share/doc/ /usr/share/man/ /usr/share/locale/ /root/.cpan /root/.cpanm"
 
-#COPY root/qemu-aarch64-static /usr/bin
+COPY root/qemu-aarch64-static /usr/bin
 COPY root/entrypoint /usr/local/sbin/entrypoint
 COPY root/telerising.process /usr/local/bin/telerising.process
 COPY root/telerising.update /usr/local/bin/telerising.update
