@@ -4,7 +4,7 @@ LABEL maintainer="Bastian Kleinschmidt <debaschdi@googlemail.com>" \
       org.label-schema.docker.dockerfile="/Dockerfile" \
       org.label-schema.name="docker.new-telerising-api"
 
-ARG DEPENDENCIES="sed curl wget git perl nano net-tools unzip ca-certificates"
+ARG DEPENDENCIES="sed curl wget git perl nano net-tools unzip ca-certificates libc6:armhf"
 
 ENV USER_ID="99" \
     GROUP_ID="100" \
@@ -23,7 +23,8 @@ COPY root/telerising.process /usr/local/bin/telerising.process
 COPY root/telerising.update /usr/local/bin/telerising.update
 COPY root/packages.cleanup /usr/local/sbin/packages.cleanup
 
-RUN apt-get -qy update \
+RUN dpkg --add-architecture armhf \
+    &&apt-get -qy update \
     ### tweak some apt & dpkg settngs
     && echo "APT::Install-Recommends "0";" >> /etc/apt/apt.conf.d/docker-noinstall-recommends \
     && echo "APT::Install-Suggests "0";" >> /etc/apt/apt.conf.d/docker-noinstall-suggests \
