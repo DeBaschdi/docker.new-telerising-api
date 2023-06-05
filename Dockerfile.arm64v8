@@ -24,7 +24,7 @@ COPY root/telerising.update /usr/local/bin/telerising.update
 COPY root/packages.cleanup /usr/local/sbin/packages.cleanup
 
 RUN dpkg --add-architecture armhf \
-    &&apt-get -qy update \
+    && apt-get -qy update \
     ### tweak some apt & dpkg settngs
     && echo "APT::Install-Recommends "0";" >> /etc/apt/apt.conf.d/docker-noinstall-recommends \
     && echo "APT::Install-Suggests "0";" >> /etc/apt/apt.conf.d/docker-noinstall-suggests \
