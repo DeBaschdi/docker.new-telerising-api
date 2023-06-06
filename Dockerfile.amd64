@@ -1,4 +1,4 @@
-FROM amd64/debian:buster-slim AS build
+FROM amd64/debian:bullseye-slim AS build
 
 LABEL maintainer="Bastian Kleinschmidt <debaschdi@googlemail.com>" \
       org.label-schema.docker.dockerfile="/Dockerfile" \
@@ -33,7 +33,7 @@ RUN apt-get -qy update \
     && echo "path-exclude=/usr/share/doc/*" >> /etc/dpkg/dpkg.cfg.d/docker-nodoc \
     && echo "path-include=/usr/share/doc/*/copyright" >> /etc/dpkg/dpkg.cfg.d/docker-nodoc \
     ### install basic packages
-    && apt-get install -qy apt-utils locales tzdata \
+    && apt-get install -qy apt-utils locales tzdata gpg\
     ### limit locale to en_US.UTF-8
     && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
     && locale-gen en_US.UTF-8 \
