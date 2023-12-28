@@ -5,7 +5,7 @@ echo "Updating the NEW Telerising-API"
 PWD=$(pwd)
 
 rm -rf /telerising/telerising
-git clone https://github.com/sunsettrack4/telerising-api /telerising/telerising
+git clone https://github.com/sunsettrack4/telerising-api /telerising/telerising --depth 1
 
 cd /telerising/telerising
 git checkout main
