@@ -13,6 +13,8 @@ git checkout main
 # Install Package, depending on Architecture
 if [ $(uname -m) = 'x86_64' ]; then
         unzip -o $(ls |grep linux) -d /
+elif [ $(uname -m) = 'aarch64' ]; then
+        unzip -o $(ls |grep arm64) -d /
 else
         unzip -o $(ls |grep armhf) -d /
 fi
